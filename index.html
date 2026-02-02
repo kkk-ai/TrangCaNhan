@@ -1,0 +1,3171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Video Portfolio</title>
+
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #e67e22;
+            --bg: #f4f7f6;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-card h1 {
+            margin: 15px 0 5px;
+            color: var(--primary);
+        }
+
+        .profile-card p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        /* ===== VIDEO CARD ===== */
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .thumb {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .info {
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 1.05em;
+            color: var(--primary);
+        }
+
+        .btn-view {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-view:hover {
+            background: var(--accent);
+        }
+
+        /* ===== SCRIPT OVERLAY ===== */
+        .script-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.97);
+            padding: 20px;
+            display: none;
+            overflow-y: auto;
+            z-index: 10;
+            border-radius: 12px;
+        }
+
+        .script-overlay h3 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+
+        .btn-close {
+            float: right;
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* ===== SCRIPT FORMAT ===== */
+        .script-segment {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+        }
+
+        .time-stamp {
+            font-weight: bold;
+            font-size: 13px;
+            color: var(--accent);
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .script-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .visual,
+        .audio {
+            background: white;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .label {
+            display: block;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: var(--primary);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .script-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="profile-card">
+        <img src="https://via.placeholder.com/100" alt="Avatar">
+        <h1>BÙI THANH NAM</h1>
+        <p>Tôi là người sáng tạo nội dung giáo dục trong lĩnh vực Công nghệ Thông tin, tập trung vào việc giải thích các khái niệm kỹ thuật phức tạp bằng ngôn ngữ đơn giản, trực quan và dễ tiếp cận.</p>
+		<p>Nội dung của tôi xoay quanh Web Development, hệ thống, và định hướng nghề nghiệp IT, với cách tiếp cận kể chuyện, ẩn dụ và motion graphics nhằm giúp người mới và người trái ngành hiểu đúng bản chất công nghệ.</p>
+        <p>Email: nam472829@gmail.com | SĐT: 0332 758 521</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="video-grid">
+
+        <!-- VIDEO CARD 1111111111111111111111111-->
+        <div class="video-card">
+            <img src="https://picsum.photos/400/225?1" class="thumb" alt="">
+            <div class="info">
+                <div class="title">Video 01 – Giải thích API</div>
+<a href="https://vt.tiktok.com/ZSagXWgFB/" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+            </div>			
+
+            <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+            <div class="script-overlay">
+                <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+                <h3>Giải thích API</h3>
+
+                <div class="script-segment">
+    <span class="time-stamp">00:00 – 00:04 | CẢNH MỞ ĐẦU – HOOK</span>
+    <div class="script-grid">
+        <div class="visual">
+            <span class="label">👁 Visual & Motion</span>
+            Nền đen.<br>
+            Lưới 3D Perspective Grid màu xám mờ di chuyển chậm.<br>
+            Chữ pop-up từng dòng, easing nhẹ.<br><br>
+            <strong>Typography (Center):</strong><br>
+            LẬP TRÌNH VIÊN<br>
+            WEBSITE<br>
+            CẦN BIẾT!
+        </div>
+        <div class="audio">
+            <span class="label">🔊 Audio</span>
+            VO: “Nếu bạn là một lập trình viên website, các bạn không thể bỏ qua khái niệm này.”<br><br>
+            SFX: Pop nhẹ mỗi dòng chữ
+        </div>
+    </div>
+</div>
+
+<div class="script-segment">
+    <span class="time-stamp">00:05 – 00:09 | ĐỊNH NGHĨA API</span>
+    <div class="script-grid">
+        <div class="visual">
+            <span class="label">👁 Visual & Motion</span>
+            Chữ API phóng to ở giữa (Scale In).<br>
+            Transition swoosh sang 3 dòng giải thích.<br><br>
+            <strong>Typography:</strong><br>
+            API<br>
+            APPLICATION<br>
+            PROGRAMMING<br>
+            INTERFACE
+        </div>
+        <div class="audio">
+            <span class="label">🔊 Audio</span>
+            VO: “API là viết tắt của Application Programming Interface.”<br><br>
+            SFX: Swoosh mượt
+        </div>
+    </div>
+</div>
+
+<div class="script-segment">
+    <span class="time-stamp">00:10 – 00:16 | ẨN DỤ API – PHẦN 1</span>
+    <div class="script-grid">
+        <div class="visual">
+            <span class="label">👁 Visual & Motion</span>
+            Icon điện thoại (Bạn) bên trái.<br>
+            Icon người phục vụ (API) ở giữa.<br>
+            Mũi tên cong chuyển động từ Bạn → API.<br><br>
+            <strong>Typography:</strong><br>
+            BẠN &nbsp;&nbsp;&nbsp;&nbsp; API
+        </div>
+        <div class="audio">
+            <span class="label">🔊 Audio</span>
+            VO: “Các bạn có thể hiểu đơn giản, nó giống như là một người phục vụ trong nhà hàng.”<br><br>
+            SFX: Chuông nhà hàng “Ding!”
+        </div>
+    </div>
+</div>
+
+<div class="script-segment">
+    <span class="time-stamp">00:17 – 00:26 | ẨN DỤ API – PHẦN 2</span>
+    <div class="script-grid">
+        <div class="visual">
+            <span class="label">👁 Visual & Motion</span>
+            Icon đầu bếp (Server) phía trên.<br>
+            Mũi tên hai chiều API ↔ Server.<br>
+            Vòng mũi tên xoay thể hiện quy trình khép kín.<br><br>
+            <strong>Typography:</strong><br>
+            SERVER
+        </div>
+        <div class="audio">
+            <span class="label">🔊 Audio</span>
+            VO: “Người phục vụ là API, mang yêu cầu đến bếp.<br>
+            Và bếp giống như server, xử lý rồi gửi kết quả ngược lại.”<br><br>
+            SFX: Tiếng gõ phím nhanh / tiếng lật chảo
+        </div>
+    </div>
+</div>
+
+<div class="script-segment">
+    <span class="time-stamp">00:27 – 00:41 | VÍ DỤ THỰC TẾ – WEATHER API</span>
+    <div class="script-grid">
+        <div class="visual">
+            <span class="label">👁 Visual & Motion</span>
+            Icon điện thoại hiển thị thời tiết.<br>
+            Mũi tên lớn đẩy lên Weather API.<br>
+            Dữ liệu trả về: Nhiệt độ + icon mặt trời.<br><br>
+            <strong>Typography:</strong><br>
+            Weather API
+        </div>
+        <div class="audio">
+            <span class="label">🔊 Audio</span>
+            VO: “Ví dụ khi bạn mở app dự báo thời tiết,<br>
+            thì app không tự đo nhiệt độ,<br>
+            mà nó gọi đến Weather API để lấy dữ liệu từ máy chủ.”<br><br>
+            SFX: Gió nhẹ + Ting khi số liệu hiện
+        </div>
+    </div>
+</div>
+
+<div class="script-segment">
+    <span class="time-stamp">00:42 – 00:50 | TỔNG KẾT KIẾN THỨC</span>
+    <div class="script-grid">
+        <div class="visual">
+            <span class="label">👁 Visual & Motion</span>
+            Quay lại nền lưới 3D.<br>
+            Chữ xuất hiện mạnh, rung nhẹ theo beat.<br><br>
+            <strong>Typography (Bold – Center):</strong><br>
+            CẦU NỐI<br>
+            ỨNG DỤNG<br>
+            VÀ<br>
+            HỆ THỐNG KHÁC
+        </div>
+        <div class="audio">
+            <span class="label">🔊 Audio</span>
+            VO: “Tóm lại, API chính là cầu nối giữa ứng dụng và các hệ thống khác.”<br><br>
+            Nhạc nền đẩy cao trào
+        </div>
+    </div>
+</div>
+
+<div class="script-segment">
+    <span class="time-stamp">00:51 – 00:54 | KẾT THÚC – CTA</span>
+    <div class="script-grid">
+        <div class="visual">
+            <span class="label">👁 Visual & Motion</span>
+            Clip meme ngắn (1–1.5s).<br>
+            Text Bounce xuất hiện.<br><br>
+            <strong>Typography:</strong><br>
+            Comment cho mình biết nhé!
+        </div>
+        <div class="audio">
+            <span class="label">🔊 Audio</span>
+            VO: “Bạn đã từng dùng API nào chưa? Comment cho mình biết nha!”<br><br>
+            SFX: Âm thanh vui nhộn
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+
+        <!-- COPY CARD Ở ĐÂY 2222222222222222222222222 -->
+<!-- VIDEO CARD -->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?2" class="thumb" alt="REST API Concept">
+    <div class="info">
+        <div class="title">Video 02 – REST API là gì?</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7590737459932089620?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>REST API</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:04 | CẢNH MỞ ĐẦU – HOOK</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Nền đen.<br>
+                    Các đường request chạy ngang màn hình như dữ liệu.<br>
+                    Text xuất hiện dạng Typewriter + Glitch nhẹ.<br><br>
+                    <strong>Typography (Center):</strong><br>
+                    API THÌ BẠN BIẾT RỒI…<br>
+                    NHƯNG REST API LÀ GÌ?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn đã nghe qua API rồi… nhưng REST API là gì mà dự án nào cũng dùng?”<br><br>
+                    SFX: Digital Glitch nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:05 – 00:10 | ĐỊNH NGHĨA REST API</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chữ REST API xuất hiện lớn.<br>
+                    Bên dưới hiện keyword từng dòng.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    REST API<br>
+                    Representational<br>
+                    State<br>
+                    Transfer
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “REST API là một cách thiết kế API dựa trên giao thức HTTP.”<br><br>
+                    SFX: Swoosh mượt
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:11 – 00:18 | TƯ DUY TÀI NGUYÊN (RESOURCE)</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon Server ở giữa.<br>
+                    Các folder xuất hiện xung quanh: /users, /products, /orders.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    /users<br>
+                    /products<br>
+                    /orders
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Trong REST, mọi thứ đều được xem là tài nguyên, và mỗi tài nguyên có một đường dẫn riêng.”<br><br>
+                    SFX: Click nhẹ khi mỗi folder hiện
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:19 – 00:30 | HTTP METHODS – TRÁI TIM REST API</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Bảng chia 4 ô.<br>
+                    Mỗi ô là 1 HTTP Method + icon minh họa.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    GET &nbsp;&nbsp;&nbsp; → LẤY DỮ LIỆU<br>
+                    POST &nbsp;&nbsp; → TẠO MỚI<br>
+                    PUT &nbsp;&nbsp;&nbsp; → CẬP NHẬT<br>
+                    DELETE → XOÁ
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “REST API sử dụng các HTTP Method quen thuộc như GET, POST, PUT và DELETE.”<br><br>
+                    SFX: Tick / Whoosh theo từng method
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:31 – 00:42 | VÍ DỤ THỰC TẾ – USER API</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon App gọi API.<br>
+                    Request bay sang Server.<br>
+                    Response trả về danh sách user.<br><br>
+                    <strong>Typography:</strong><br>
+                    GET /users<br>
+                    POST /users
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Ví dụ, khi app cần danh sách người dùng thì nó chỉ cần gọi GET /users là xong.”<br><br>
+                    SFX: Ting khi dữ liệu trả về
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:43 – 00:52 | VÌ SAO REST API PHỔ BIẾN?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    3 icon lần lượt hiện ra: Web – Mobile – Backend.<br>
+                    Kết nối với cùng 1 API.<br><br>
+                    <strong>Typography:</strong><br>
+                    DỄ HIỂU - DỄ MỞ RỘNG<br>
+                    ĐA NỀN TẢNG
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “REST API đơn giản, dễ mở rộng và dùng được cho cả web lẫn mobile.”<br><br>
+                    Nhạc nền lên cao trào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:53 – 01:00 | TỔNG KẾT + CTA</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Text xuất hiện mạnh theo beat.<br>
+                    Kết bằng meme nhẹ (dev gật gù).<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    REST API = TIÊU CHUẨN CỦA WEB HIỆN ĐẠI
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Nếu bạn học web mà chưa hiểu REST API thì chắc chắn sẽ rất khó đi xa. Comment nếu bạn muốn mình làm video về Fetch API nhé!”<br><br>
+                    SFX: Fun pop
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+
+        <!-- COPY CARD Ở ĐÂY 333333333333333333333333333333333 -->
+        <!-- Thêm video mới chỉ cần copy nguyên khối video-card -->
+
+<!-- VIDEO CARD -->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?3" class="thumb" alt="Fetch API Concept">
+    <div class="info">
+        <div class="title">Video 03 – Fetch API là gì?</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7591476539175374100?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Fetch API</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:04 | HOOK – KẾT NỐI KIẾN THỨC CŨ</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Nền đen. Icon REST API xuất hiện mờ phía sau.<br>
+                    Text zoom nhẹ vào trung tâm.<br><br>
+                    <strong>Typography (Center):</strong><br>
+                    BIẾT REST API RỒI…<br>
+                    NHƯNG GỌI NÓ KIỂU GÌ?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Biết REST API rồi, nhưng website gọi dữ liệu kiểu gì?”<br><br>
+                    SFX: Digital Whoosh
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:05 – 00:10 | ĐỊNH NGHĨA FETCH API</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chữ Fetch API xuất hiện lớn.<br>
+                    Icon trình duyệt (Browser) bên cạnh.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    FETCH API
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Fetch API là công cụ có sẵn trong JavaScript dùng để gọi dữ liệu từ server.”<br><br>
+                    SFX: Pop nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:11 – 00:18 | FETCH API DÙNG Ở ĐÂU?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon Browser → Mũi tên → Server.<br>
+                    Chữ “Frontend” xuất hiện dưới Browser.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    FRONTEND → SERVER
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Fetch API thường được dùng ở Frontend, để giao tiếp với REST API.”<br><br>
+                    SFX: Line Draw animation
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:19 – 00:30 | CẤU TRÚC FETCH API (CODE MOTION)</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Code xuất hiện từng dòng (Type-on effect).<br>
+                    Highlight màu vàng theo nhịp đọc.<br><br>
+                    <strong>Typography (Code Style):</strong><br>
+                    <pre style="color: #f1fa8c; background: #282a36; padding: 10px; border-radius: 5px;">
+fetch('/users')
+  .then(response => response.json())
+  .then(data => console.log(data))</pre>
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Fetch API trả về một Promise, nên chúng ta dùng then để xử lý dữ liệu.”<br><br>
+                    SFX: Typing nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:31 – 00:40 | LUỒNG HOẠT ĐỘNG FETCH API</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Flow animation 4 bước nối tiếp.<br>
+                    Mỗi bước sáng lên khi được nhắc.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    REQUEST → RESPONSE → JSON → DATA
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Luồng của Fetch rất đơn giản: gửi request, nhận response, chuyển sang JSON và lấy data.”<br><br>
+                    SFX: Step click
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:41 – 00:50 | FETCH + REST API (VÍ DỤ THỰC TẾ)</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Browser gọi GET /users.<br>
+                    Danh sách user hiện lên UI.<br><br>
+                    <strong>Typography:</strong><br>
+                    GET /users
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Ví dụ khi gọi GET /users, Fetch API sẽ lấy dữ liệu rồi hiển thị lên giao diện người dùng.”<br><br>
+                    SFX: Ting khi data hiện
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:51 – 00:57 | TỔNG KẾT KIẾN THỨC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chữ xuất hiện mạnh theo beat. Background grid nhẹ.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    FETCH API = CẦU NỐI FRONTEND & BACKEND
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Fetch API chính là cầu nối giữa Frontend và Backend.”<br><br>
+                    Nhạc nền lên cao trào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:58 – 01:02 | CTA – KẾT THÚC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Meme dev nhìn code gật gù. Text bounce nhẹ.<br><br>
+                    <strong>Typography:</strong><br>
+                    Muốn học Async / Await không? Comment nhé!
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn muốn mình làm tiếp Async Await không? Comment cho mình biết nha!”<br><br>
+                    SFX: Fun pop
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- COPY CARD Ở ĐÂY44444444444444444 -->
+        <!-- Thêm video mới chỉ cần copy nguyên khối video-card -->
+
+<!-- VIDEO CARD -->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?4" class="thumb" alt="HTTP Status Codes Concept">
+    <div class="info">
+        <div class="title">Video 04 – HTTP Status Code là gì?</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7595190049734511893?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>HTTP Status Code</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:04 | HOOK – ĐÁNH VÀO HIỂU LẦM</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Nền đen. Icon WiFi hiện lên → bị gạch chéo ❌.<br>
+                    Chữ 404 rung nhẹ (Shake).<br><br>
+                    <strong>Typography (Center):</strong><br>
+                    404 KHÔNG PHẢI LỖI MẠNG ĐÂU!
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “404 không phải lỗi mạng đâu nha!”<br><br>
+                    SFX: Error beep ngắn
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:05 – 00:10 | HTTP STATUS CODE LÀ GÌ?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon Browser gửi request.<br>
+                    Server trả về số 200 / 404 / 500 bay ngược lại.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    HTTP STATUS CODE
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “HTTP Status Code là những con số cho biết chuyện gì đang xảy ra giữa trình duyệt và server.”<br><br>
+                    SFX: Whoosh nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:11 – 00:18 | NHÓM 200 – THÀNH CÔNG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon Server màu xanh. Dấu tick ✔ xuất hiện.<br><br>
+                    <strong>Typography:</strong><br>
+                    200 – OK<br>
+                    201 – CREATED
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Nhóm 200 là thành công. 200 là lấy dữ liệu OK, 201 là tạo dữ liệu thành công.”<br><br>
+                    SFX: Success ding
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:19 – 00:26 | NHÓM 400 – CLIENT SAI</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon người dùng nhập sai form. Server lắc đầu ❌.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    400 – BAD REQUEST
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “400 nghĩa là client gửi request sai, ví dụ thiếu dữ liệu hoặc sai định dạng.”<br><br>
+                    SFX: Warning pop
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:27 – 00:33 | 401 – CHƯA ĐĂNG NHẬP</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon ổ khoá 🔒. Người dùng bị chặn trước server.<br><br>
+                    <strong>Typography:</strong><br>
+                    401 – UNAUTHORIZED
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “401 là chưa đăng nhập hoặc không có quyền truy cập.”<br><br>
+                    SFX: Lock click
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:34 – 00:40 | 404 – KHÔNG TÌM THẤY</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Server trống rỗng. Dấu hỏi lớn ❓.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    404 – NOT FOUND
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “404 là server vẫn chạy, nhưng không tìm thấy tài nguyên bạn yêu cầu.”<br><br>
+                    SFX: Hollow pop
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:41 – 00:48 | 500 – LỖI SERVER</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Server màu đỏ. Khói bốc lên / Bug icon 🐞.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    500 – INTERNAL SERVER ERROR
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “500 là lỗi từ phía server. Client không làm gì sai hết.”<br><br>
+                    SFX: Error buzz
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:49 – 00:55 | TỔNG KẾT KIẾN THỨC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Các code xếp thành cột. Highlight theo beat.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    200 → OK<br>
+                    400 → CLIENT SAI<br>
+                    500 → SERVER SAI
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Nhìn Status Code là biết lỗi nằm ở client hay server liền.”<br><br>
+                    Nhạc nền cao trào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:56 – 01:00 | CTA – KẾT THÚC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Meme dev nhìn console gật gù. Text bounce nhẹ.<br><br>
+                    <strong>Typography:</strong><br>
+                    Muốn học cách xử lý lỗi API không? Comment nhé!
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn muốn mình làm video xử lý lỗi API không? Comment cho mình biết nha!”<br><br>
+                    SFX: Fun pop
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- COPY CARD Ở ĐÂY -->
+        <!-- Thêm video mới chỉ cần copy nguyên khối video-card -->
+
+
+<!-- VIDEO CARD 55555555555555555555 -->
+<div class="video-card">
+    <img src="https://picsum.photos/400/225?5" class="thumb" alt="CORS Explained">
+    <div class="info">
+        <div class="title">Video 05 – CORS là gì? Tại sao bị chặn?</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7594454028612816149?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>CORS (Cross-Origin Resource Sharing)</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:04 | HOOK – TÌNH HUỐNG QUEN THUỘC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon Postman gửi request → Server → OK ✔.<br>
+                    Icon Browser gửi request → BỊ CHẶN 🚫.<br>
+                    Thanh chắn hiện ra trước Browser.<br><br>
+                    <strong>Typography (Center):</strong><br>
+                    API CHẠY POSTMAN ĐƯỢC MÀ WEB THÌ KHÔNG?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Sao API chạy Postman được, mà web thì không?”<br><br>
+                    SFX: Error beep nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:05 – 00:11 | CORS LÀ GÌ?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chữ CORS xuất hiện lớn. Icon ổ khoá + hàng rào bảo vệ.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    CORS<br>
+                    Cross-Origin Resource Sharing
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “CORS là cơ chế bảo mật của trình duyệt, giúp kiểm soát việc gọi API từ website khác.”<br><br>
+                    SFX: Lock click
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:12 – 00:20 | SAME-ORIGIN POLICY</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    2 website khác domain đứng trước server.<br>
+                    Website khác origin bị chặn. Website cùng origin được đi vào.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    SAME-ORIGIN POLICY
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Theo Same-origin policy, trình duyệt chỉ cho gọi API từ cùng domain, protocol và port.”<br><br>
+                    SFX: Barrier slide
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:21 – 00:30 | VÌ SAO POSTMAN KHÔNG BỊ CHẶN?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon Postman đi đường “bypass”. Không có hàng rào bảo mật.<br><br>
+                    <strong>Typography:</strong><br>
+                    POSTMAN ≠ TRÌNH DUYỆT
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Postman không bị CORS vì nó không phải trình duyệt.”<br><br>
+                    SFX: Whoosh
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:31 – 00:42 | CORS HOẠT ĐỘNG THẾ NÀO?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Browser gửi request. Server trả header màu xanh. Cửa mở ra.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    Access-Control-Allow-Origin
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Server cần gửi kèm các CORS header, thì trình duyệt mới cho phép request đi qua.”<br><br>
+                    SFX: Gate open sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:43 – 00:52 | AI CẦN FIX CORS?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Frontend chỉ tay sang Backend. Backend bật công tắc “Allow”.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    CORS → BACKEND FIX
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “CORS không fix ở Frontend, mà phải cấu hình ở Backend.”<br><br>
+                    SFX: Confirm ding
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:53 – 00:58 | TỔNG KẾT KIẾN THỨC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    3 bullet hiện theo beat.<br><br>
+                    <strong>Typography:</strong><br>
+                    • CORS = BẢO MẬT TRÌNH DUYỆT<br>
+                    • POSTMAN KHÔNG BỊ CHẶN<br>
+                    • BACKEND LÀ NGƯỜI FIX
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Hiểu CORS là bạn debug web nhanh hơn rất nhiều.”<br><br>
+                    Nhạc nền lên cao trào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:59 – 01:03 | CTA – KẾT THÚC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Meme dev gật gù / vỗ tay. Text bounce nhẹ.<br><br>
+                    <strong>Typography:</strong><br>
+                    Muốn xem cách fix CORS thực tế không? Comment nhé!
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn muốn mình làm video fix CORS thực tế không? Comment cho mình biết nha!”<br><br>
+                    SFX: Fun pop
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- COPY CARD Ở ĐÂY 666666666666666666666666-->
+        <!-- Thêm video mới chỉ cần copy nguyên khối video-card -->
+
+<!-- VIDEO CARD -->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?7" class="thumb" alt="Deep Dive JSON">
+    <div class="info">
+        <div class="title">Video 06 – Tại sao API dùng JSON thay vì HTML?</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7595939382817738005?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Tư duy JSON trong Web hiện đại</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:25 | MỞ ĐẦU – TẠO VẤN ĐỀ</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Server đưa ra 2 lựa chọn: HTML (nặng, nhiều tag) và JSON (nhẹ, gọn).<br>
+                    HTML rơi chậm, JSON bay nhanh.<br>
+                    Website → gọi API → nhận dữ liệu. Frontend + Backend tách riêng.<br><br>
+                    <strong>Typography:</strong><br>
+                    SAO API KHÔNG TRẢ HTML CHO NHANH?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn có bao giờ thắc mắc… sao API không trả về HTML cho nhanh, mà lại toàn trả JSON không? Để trả lời câu hỏi này, mình cần hiểu rõ JSON là gì, và vai trò của nó trong Web hiện đại.”<br><br>
+                    SFX: Whoosh so sánh nặng - nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:26 – 01:05 | JSON LÀ GÌ?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chữ JSON hiện lớn. Các ký tự { } [ ] bay vào.<br>
+                    Backend tạo dữ liệu → Gửi JSON → Frontend → Mobile App.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    JSON = JavaScript Object Notation
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “JSON là viết tắt của JavaScript Object Notation. Đây là một định dạng dữ liệu, dùng để trao đổi thông tin giữa các hệ thống. Lưu ý nha, JSON không phải ngôn ngữ lập trình. Nó được sinh ra để truyền dữ liệu, không phải hiển thị giao diện.”<br><br>
+                    SFX: Pop nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:06 – 01:40 | CẤU TRÚC JSON – KEY & VALUE</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Code Animation: Key tô vàng, Value tô trắng/xanh.<br>
+                    <pre style="color: #f8f8f2; background: #282a36; padding: 10px; border-radius: 5px;">
+{
+  "name": "An",
+  "age": 22,
+  "isStudent": true
+}</pre>
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “JSON có cấu trúc key – value. Key là tên dữ liệu, value là giá trị tương ứng. Rất giống object trong JavaScript. Chính vì cấu trúc đơn giản này, nó vừa dễ đọc với con người, vừa dễ xử lý với máy.”<br><br>
+                    SFX: Typing nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:41 – 02:20 | JSON VS XML – VÌ SAO JSON THẮNG?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Màn hình chia đôi: XML nhiều tag dài dòng vs JSON ngắn gọn.<br>
+                    JSON được highlight rực rỡ.<br><br>
+                    [Image showing a comparison of the same data represented in XML vs JSON format]
+                    <strong>Typography:</strong><br>
+                    JSON NGẮN - NHẸ - DỄ PARSE
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Trước đây, API thường dùng XML. Nhưng XML rất dài dòng, nhiều tag mở – đóng, gây tốn băng thông và khó đọc. JSON ngắn hơn, nhẹ hơn và dễ parse hơn nhiều. Đó là lý do nó trở thành tiêu chuẩn.”<br><br>
+                    SFX: Slide compare
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:21 – 02:45 | TƯ DUY KIẾN TRÚC WEB HIỆN ĐẠI</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Backend → JSON. Một luồng JSON chia ra 3 hướng: Web, Mobile, App khác.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    BACKEND: DỮ LIỆU<br>
+                    FRONTEND: HIỂN THỊ
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Nếu API trả HTML, backend phải lo cả giao diện. Nhưng web hiện đại tách rõ: Backend chỉ lo dữ liệu, Frontend lo hiển thị. Một API JSON có thể dùng cho mọi nền tảng.”<br><br>
+                    SFX: Connection ding
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:46 – 03:00 | TỔNG KẾT – ĐÚNG TƯ DUY DEV</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Bullet xuất hiện từng dòng.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    JSON = DỮ LIỆU<br>
+                    HTML = GIAO DIỆN<br>
+                    API → TRẢ JSON<br>
+                    FRONTEND → RENDER UI
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Tóm lại, JSON không phải để hiển thị, mà là để trao đổi dữ liệu. Hiểu được điều này, bạn sẽ hiểu sâu hơn rất nhiều khi học API và Frontend.”<br><br>
+                    Nhạc nền lên cao trào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">03:01 – 03:10 | CTA – MỞ RỘNG KIẾN THỨC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Text bounce nhẹ.<br><br>
+                    <strong>Typography:</strong><br>
+                    Muốn xem cách render JSON thực tế không?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Nếu bạn muốn xem cách dùng Fetch API để parse JSON và render giao diện thực tế, thì comment cho mình biết nha!”<br><br>
+                    SFX: Fun pop
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- COPY CARD Ở ĐÂY 167777777777777777777777777-->
+        <!-- Thêm video mới chỉ cần copy nguyên khối video-card -->
+
+<!-- VIDEO CARD -->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?8" class="thumb" alt="DOM Tree Concept">
+    <div class="info">
+        <div class="title">Video 07 – DOM là gì? Trái tim của Frontend</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7596667845212196117?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>DOM (Document Object Model)</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:25 | MỞ ĐẦU – ĐẶT CÂU HỎI CỐT LÕI</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Website hiển thị nút “Click me”. JavaScript icon đứng cạnh, chỉ tay vào màn hình.<br>
+                    Dấu hỏi lớn xuất hiện ❓. HTML → Browser → Giao diện (Một lớp “ẩn” nằm giữa).<br><br>
+                    <strong>Typography:</strong><br>
+                    JS KHÔNG NHÌN THẤY GIAO DIỆN...<br>
+                    VẬY NÓ THAO TÁC VÀO ĐÂU?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “JavaScript không nhìn thấy giao diện… vậy nó thao tác vào đâu mà website thay đổi được? Câu trả lời nằm ở một khái niệm cực kỳ quan trọng: đó là DOM.”<br><br>
+                    SFX: Digital mystery sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:26 – 01:00 | DOM LÀ GÌ?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chữ DOM hiện lớn. Browser tạo ra cấu trúc cây.<br>
+                    JavaScript → DOM → Giao diện thay đổi.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    DOM<br>
+                    Document Object Model
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “DOM là viết tắt của Document Object Model. Khi trình duyệt đọc file HTML, nó sẽ chuyển toàn bộ nội dung thành một mô hình đối tượng gọi là DOM. JavaScript không thao tác trực tiếp vào HTML, mà thao tác vào DOM – cầu nối giữa JS và giao diện.”<br><br>
+                    SFX: Swoosh mượt
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:01 – 01:35 | DOM TREE – CẤU TRÚC DẠNG CÂY</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    HTML đơn giản tách ra thành cây DOM (Node cha - con sáng lên).<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    html > body > div > p
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “DOM có cấu trúc dạng cây, gọi là DOM Tree. Mỗi thẻ HTML là một node trong cây. Nhờ cấu trúc này, JavaScript có thể truy cập, thay đổi hoặc xoá từng phần của giao diện một cách linh hoạt.”<br><br>
+                    SFX: Click nhẹ theo từng nhánh cây
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:36 – 02:05 | MỐI QUAN HỆ JS ↔ HTML</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    HTML → Browser → DOM.<br>
+                    JS thao tác DOM → UI đổi màu / đổi chữ.<br><br>
+                    <strong>Typography:</strong><br>
+                    DOM LÀ BẢN SAO SỐNG CỦA HTML
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “HTML dùng để định nghĩa cấu trúc ban đầu. DOM là bản sao sống của HTML trong trình duyệt. JavaScript thay đổi DOM, và trình duyệt sẽ cập nhật lại giao diện.”<br><br>
+                    SFX: Connection ding
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:06 – 02:35 | JS TÌM NODE KIỂU GÌ?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Code Animation: document.querySelector('.title')<br>
+                    Selector .title sáng lên trong DOM Tree.<br><br>
+                    <strong>Typography (Code):</strong><br>
+                    <pre style="color: #f1fa8c; background: #282a36; padding: 10px; border-radius: 5px;">document.querySelector('.title')</pre>
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Để thao tác DOM, JavaScript cần tìm đúng node. Phổ biến nhất là dùng querySelector. Nó hoạt động giống CSS selector, giúp JavaScript chọn đúng phần tử trong cây DOM.”<br><br>
+                    SFX: Typing nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:36 – 02:50 | VÍ DỤ TRỰC QUAN DOM THAY ĐỔI UI</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Nút click. Text đổi màu / đổi nội dung ngay lập tức.<br><br>
+                    <strong>Typography:</strong><br>
+                    CLICK → CHANGE DOM → UPDATE UI
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Khi người dùng click nút, JavaScript thay đổi DOM, và giao diện đổi theo ngay lập tức.”<br><br>
+                    SFX: Ting!
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:51 – 03:05 | TỔNG KẾT – TƯ DUY ĐÚNG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Typography mạnh mẽ xuất hiện theo beat.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    HTML → DOM → UI<br>
+                    JS → THAO TÁC DOM<br>
+                    DOM = TRÁI TIM FRONTEND
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Tóm lại, DOM là trái tim của Frontend. Hiểu DOM, bạn sẽ hiểu vì sao JavaScript có thể làm giao diện sống động.”<br><br>
+                    Nhạc nền lên cao trào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">03:06 – 03:15 | CTA – MỞ RỘNG KIẾN THỨC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Text bounce nhẹ.<br><br>
+                    <strong>Typography:</strong><br>
+                    Muốn xem cách thao tác DOM thực tế không?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Nếu bạn muốn xem cách thao tác DOM thực tế bằng JavaScript thuần, comment cho mình biết nha!”<br><br>
+                    SFX: Fun pop
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- COPY CARD Ở ĐÂY 8888888888888888-->
+        <!-- Thêm video mới chỉ cần copy nguyên khối video-card -->
+
+
+<!-- VIDEO CARD -->
+       <div class="video-card">
+    <img src="https://picsum.photos/400/225?9" class="thumb" alt="Event Loop Architecture">
+    <div class="info">
+        <div class="title">Video 08 – Event Loop: Bí mật của sự bất đồng bộ</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7597414473284046100?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Event Loop trong JavaScript</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:30 | HOOK & DẪN VÀO</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Một nhân viên duy nhất đứng làm việc. Nhiều người xếp hàng phía sau.<br>
+                    Nhân viên nhìn vào 3 khu vực: bàn làm việc – hàng đợi – hàng ưu tiên.<br><br>
+                    <strong>Typography:</strong><br>
+                    JS CHỈ CHẠY 1 LUỒNG<br>
+                    SAO VẪN BẤT ĐỒNG BỘ?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “JavaScript chỉ chạy một luồng thôi… vậy tại sao vẫn có setTimeout, fetch, promise? Câu trả lời nằm ở một cơ chế cực kỳ quan trọng: Event Loop.”<br><br>
+                    SFX: Digital Whoosh
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:31 – 01:05 | CALL STACK – BÀN LÀM VIỆC CHÍNH</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Một cái bàn với các task xếp chồng lên nhau. Nhân viên chỉ làm 1 việc tại 1 thời điểm.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    CALL STACK
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Call Stack là nơi JavaScript thực thi code. Mọi dòng code đồng bộ sẽ được đưa vào đây và xử lý lần lượt. Vì chỉ làm được một việc một lúc nên nếu một task chạy lâu, toàn bộ chương trình sẽ bị đứng.”<br><br>
+                    SFX: Thumping sound (khi task đè lên nhau)
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:06 – 01:40 | CALLBACK QUEUE – HÀNG ĐỢI THƯỜNG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Hàng người xếp hàng phía sau biển tên: Callback Queue.<br>
+                    Call Stack trống → Event Loop gọi người từ hàng đợi.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    CALLBACK QUEUE<br>
+                    (setTimeout, DOM Events)
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Những tác vụ bất đồng bộ như setTimeout hay click chuột sẽ không vào Call Stack ngay mà được đưa vào Callback Queue. Khi Call Stack rảnh, Event Loop sẽ lấy task đầu tiên đưa vào xử lý.”<br><br>
+                    SFX: Crowd murmuring
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:41 – 02:15 | MICROTASK QUEUE – HÀNG ƯU TIÊN</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Một hàng VIP song song. Nhân viên luôn gọi hàng VIP trước.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    MICROTASK<br>
+                    (Promise, async/await)
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Ngoài Callback Queue, JavaScript còn có Microtask Queue – đây là hàng ưu tiên. Khi Call Stack trống, JavaScript sẽ xử lý toàn bộ Microtask trước, rồi mới tới Callback Queue.”<br><br>
+                    SFX: VIP entrance chime
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:16 – 02:40 | EVENT LOOP – NGƯỜI ĐIỀU PHỐI</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Event Loop đứng giữa. Mũi tên xoay vòng: Call Stack → Microtask → Callback.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    EVENT LOOP
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Event Loop là người điều phối. Nó liên tục kiểm tra Call Stack. Nếu trống, nó xử lý Microtask trước, rồi mới tới Callback Queue.”<br><br>
+                    SFX: Mechanical spinning sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:41 – 02:55 | ẨN DỤ NHÂN VIÊN</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Nhân viên xử lý: Việc đang làm → Khách VIP → Khách thường.<br><br>
+                    <strong>Typography:</strong><br>
+                    STACK > MICROTASK > CALLBACK
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Giống như một nhân viên: làm xong việc hiện tại, ưu tiên khách VIP, rồi mới tới khách xếp hàng thường.”<br><br>
+                    SFX: Ting! Ting! Ting!
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:56 – 03:10 | KẾT LUẬN</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Typography mạnh mẽ xuất hiện theo beat.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    JS = 1 LUỒNG<br>
+                    BẤT ĐỒNG BỘ = EVENT LOOP<br>
+                    MICROTASK > CALLBACK
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “JavaScript vẫn là đơn luồng. Nhưng nhờ Event Loop, nó xử lý được bất đồng bộ một cách cực kỳ thông minh.”<br><br>
+                    Nhạc nền lên cao trào
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- VIDEO CARD 999999999999999999999-->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?10" class="thumb" alt="JWT Authentication Concept">
+    <div class="info">
+        <div class="title">Video 9 – JWT là gì? Cách website "nhớ" bạn</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7598154976610848020?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>JWT (JSON Web Token)</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:30 | HOOK – WEBSITE NHỚ BẠN BẰNG CÁCH NÀO?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Người dùng đăng nhập → F5 → vẫn đăng nhập. Dấu hỏi lớn xuất hiện ❓.<br>
+                    Một thẻ nhỏ xuất hiện trên tay người dùng ghi chữ: <strong>TOKEN</strong>.<br><br>
+                    <strong>Typography:</strong><br>
+                    WEBSITE NHỚ BẠN BẰNG CÁCH NÀO?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn đăng nhập một lần… refresh trang… mà vẫn còn đăng nhập. Vậy website nhớ bạn bằng cách nào? Câu trả lời nằm ở một thứ gọi là Token. Và phổ biến nhất hiện nay là JWT.”<br><br>
+                    SFX: Digital chime
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:31 – 01:00 | KHÁI NIỆM TOKEN & GIẤY THÔNG HÀNH</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Thẻ ra vào / vòng tay sự kiện có tên – mã – thời hạn.<br>
+                    Người dùng đưa token → cửa mở.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    TOKEN = GIẤY THÔNG HÀNH
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Token giống như một tấm thẻ ra vào. Khi bạn đăng nhập thành công, server phát cho bạn một token. Mỗi lần bạn gửi request, chỉ cần đưa token. Server nhìn token là biết bạn là ai.”<br><br>
+                    SFX: Door opening sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:01 – 01:30 | CẤU TRÚC JWT</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chữ JWT tách thành 3 khối màu khác nhau: Header – Payload – Signature.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    JWT = JSON WEB TOKEN
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “JWT là viết tắt của JSON Web Token. Nó là một token được mã hoá dưới dạng JSON. JWT gồm 3 phần: thông tin, dữ liệu, và chữ ký để xác thực. Server dùng chữ ký để kiểm tra token có bị sửa hay không.”<br><br>
+                    SFX: Mechanical click
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:31 – 02:00 | LƯU TRỮ VÀ GỬI TOKEN</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Browser hiện danh sách: LocalStorage, Cookie, Memory.<br>
+                    Request Header hiện chữ: Authorization: Bearer token.<br><br>
+                    <strong>Typography:</strong><br>
+                    Authorization: Bearer [token]
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Sau khi nhận JWT, frontend sẽ lưu nó lại, phổ biến nhất là LocalStorage hoặc Cookie. Mỗi lần gọi API, frontend gửi JWT kèm theo request. Server chỉ cần kiểm tra token là đủ.”<br><br>
+                    SFX: Typing / Sending whoosh
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:01 – 02:40 | TƯ DUY STATELESS</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Server trống, không lưu danh sách user. Nhiều server xử lý song song.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    SERVER KHÔNG LƯU SESSION
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Stateless nghĩa là server không cần nhớ bạn là ai, mọi thông tin đã nằm trong token rồi. Nhờ đó, hệ thống dễ mở rộng. Server nào cũng có thể xử lý request của bạn, chỉ cần kiểm tra JWT.”<br><br>
+                    SFX: Magic / Sparkle sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:41 – 03:00 | KẾT LUẬN – TƯ DUY ĐÚNG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Typography mạnh mẽ hiện theo beat nhạc.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    JWT = TOKEN ĐĂNG NHẬP<br>
+                    LƯU Ở CLIENT<br>
+                    SERVER KHÔNG CẦN NHỚ
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “JWT giúp website xác thực người dùng mà không cần lưu session. Đó là lý do JWT cực kỳ phổ biến trong web hiện đại.”<br><br>
+                    Nhạc nền cao trào
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- VIDEO CARD 100000000000000000000-->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?11" class="thumb" alt="Database Comparison SQL vs NoSQL">
+    <div class="info">
+        <div class="title">Video 10 – SQL vs NoSQL: Firebase nằm ở đâu?</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7598907329672760597?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Database Fundamentals</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:30 | HOOK & DẪN VÀO</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Logo Firebase xuất hiện. Dấu hỏi lớn ❓.<br>
+                    App → Server → Database.<br><br>
+                    <strong>Typography:</strong><br>
+                    FIREBASE CÓ PHẢI DATABASE KHÔNG?<br>
+                    SQL VS NoSQL?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Firebase có phải là database không? Và vì sao lại có SQL với NoSQL? Trước hết, mình phải hiểu database là gì đã.”<br><br>
+                    SFX: Digital glitch
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:31 – 01:00 | KHÁI NIỆM DATABASE</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Kho lưu trữ dữ liệu khổng lồ: User – Order – Product.<br>
+                    App đóng → mở lại → dữ liệu vẫn còn.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    DATABASE = KHO DỮ LIỆU
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Database là nơi lưu trữ dữ liệu lâu dài. User, bài viết, đơn hàng… tất cả đều nằm trong database. Nhờ nó, dữ liệu không mất khi bạn tắt app hay refresh trang.”<br><br>
+                    SFX: Server humming sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:01 – 01:35 | SQL DATABASE</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Bảng Excel. Cột – hàng rõ ràng. Quan hệ giữa các bảng nối bằng line.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    SQL DATABASE<br>
+                    (TABLE – ROW – COLUMN)
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “SQL là database dạng bảng. Dữ liệu được chia thành hàng và cột rất chặt chẽ. SQL mạnh khi dữ liệu có quan hệ. Cấu trúc rõ ràng, khó sai nhưng khó thay đổi.”<br><br>
+                    SFX: Grid clicking sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:36 – 02:05 | NoSQL DATABASE</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Các thẻ document JSON. Mỗi bản ghi giống như một file JSON.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    NoSQL DATABASE<br>
+                    (DOCUMENT / KEY-VALUE)
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “NoSQL lưu dữ liệu dạng document hoặc key-value. Mỗi bản ghi giống như một file JSON. NoSQL linh hoạt, mỗi document có thể có cấu trúc khác nhau, rất hợp cho app hiện đại.”<br><br>
+                    SFX: Paper shuffling sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:06 – 02:25 | TRẢ LỜI HOOK</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Firebase → Firestore → NoSQL.<br><br>
+                    <strong>Typography:</strong><br>
+                    FIREBASE = NỀN TẢNG (BAAS)<br>
+                    FIRESTORE = NoSQL
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Firebase là một nền tảng. Bên trong nó có Firestore và Realtime Database. Và chúng đều là NoSQL database.”<br><br>
+                    SFX: Magic sparkle
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:26 – 02:50 | SO SÁNH NHANH</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Split screen: SQL (Tài chính, kế toán) vs NoSQL (App, realtime).<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    SQL: QUAN HỆ CHẶT CHẼ<br>
+                    NoSQL: LINH HOẠT - SCALE
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Dùng SQL khi dữ liệu có quan hệ chặt chẽ. Dùng NoSQL khi cần linh hoạt, scale nhanh.”<br><br>
+                    SFX: Fast transition swoosh
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:51 – 03:05 | KẾT LUẬN</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Typography mạnh mẽ hiện theo beat.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    DATABASE = NỀN TẢNG<br>
+                    SQL ≠ NoSQL<br>
+                    CHỌN ĐÚNG > CHỌN MỚI
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Không có database nào tốt nhất. Chỉ có database phù hợp với bài toán của bạn.”<br><br>
+                    Nhạc nền cao trào
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- VIDEO CARD 111111111111111111111-->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?12" class="thumb" alt="Web Request Life Cycle">
+    <div class="info">
+        <div class="title">Video 11 – Gõ google.com chuyện gì xảy ra?</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7599643116584357141?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>How the Web Works (Step-by-Step)</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:25 | HOOK – KHOẢNH KHẮC ENTER</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Thanh địa chỉ trình duyệt gõ google.com → Enter. Màn hình đứng lại 1 nhịp.<br>
+                    Dòng chảy từ Browser → Internet → Server xuất hiện.<br><br>
+                    <strong>Typography:</strong><br>
+                    GÕ GOOGLE.COM<br>
+                    CHUYỆN GÌ XẢY RA?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn gõ google.com… nhấn Enter… Và trong vài mili-giây, cả một trang web xuất hiện. Nhưng đằng sau đó là cả một quy trình rất dài. Cùng đi từng bước nhé.”<br><br>
+                    SFX: Keyboard Enter sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:26 – 00:55 | DNS – TÌM ĐÚNG ĐỊA CHỈ IP</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    google.com → ? → IP Address. Trình duyệt hỏi DNS Server → Trả về IP.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    DNS (Domain Name System)<br>
+                    Domain → IP
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bước đầu tiên: DNS. Trình duyệt không hiểu google.com, nó chỉ hiểu địa chỉ IP. DNS giống như danh bạ điện thoại, nó chuyển domain thành IP của server.”<br><br>
+                    SFX: Telephone dialing sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:56 – 01:25 | HTTP REQUEST – LỜI CHÀO HỎI</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Browser gửi gói tin đi. Hiện Method: GET, Header, Cookie/Token.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    HTTP REQUEST
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Có IP rồi, trình duyệt gửi một HTTP request. Nói đơn giản là: ‘Cho tôi trang web này’. Request này chứa method, header, cookie… và được gửi thẳng đến server.”<br><br>
+                    SFX: Sending whoosh
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:26 – 01:55 | HTTP RESPONSE – CÂU TRẢ LỜI</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Server nhận request, xử lý logic, query database. Trả về: HTML, CSS, JS.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    HTTP RESPONSE
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Server nhận request, xử lý logic, có thể gọi database. Sau đó, server trả về response, thường là HTML kèm theo CSS và JavaScript.”<br><br>
+                    SFX: Server processing beeps
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:56 – 02:35 | BROWSER RENDER – VẼ MÀN HÌNH</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    HTML → DOM. CSS → CSSOM. DOM + CSSOM → Render Tree → Paint ra màn hình.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    PARSE → RENDER TREE → PAINT
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Trình duyệt phân tích HTML tạo ra DOM, CSS tạo ra CSSOM. Cả hai kết hợp thành Render Tree, sau đó trình duyệt vẽ giao diện ra màn hình cho bạn.”<br><br>
+                    SFX: Brushing/Painting sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:36 – 02:50 | INTERACTIVE – TƯƠNG TÁC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    User click nút → UI đổi màu hoặc nội dung ngay lập tức.<br><br>
+                    <strong>Typography:</strong><br>
+                    INTERACTIVE WITH JS
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Sau khi render xong, JavaScript tiếp tục chạy. Trang web lúc này mới thật sự tương tác được.”<br><br>
+                    SFX: Click sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:51 – 03:05 | KẾT LUẬN – BỨC TRANH TOÀN CẢNH</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Typography mạnh mẽ xuất hiện theo nhịp.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    DNS → REQUEST → RESPONSE → RENDER UI
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Tóm lại, load một trang web không hề đơn giản. Nhưng hiểu được quy trình này, bạn sẽ debug web tốt hơn rất nhiều.”<br><br>
+                    Nhạc nền cao trào
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- VIDEO CARD 122222222222222222222222-->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?13" class="thumb" alt="MVC Architecture Pattern">
+    <div class="info">
+        <div class="title">Video 12 – MVC là gì? Cách tổ chức code chuyên nghiệp</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7600020095305338132?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Kịch bản Video 13: MVC Architecture (Model - View - Controller)</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:30 | HOOK – KHI CODE TRỞ NÊN RỐI RẮM</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    File code dài vô tận, scroll mãi không hết.<br>
+                    Sau đó, code được chia thành 3 khu vực màu sắc rõ ràng.<br><br>
+                    <strong>Typography:</strong><br>
+                    CODE CÀNG LỚN CÀNG RỐI?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Lúc mới học thì code rất vui… Nhưng dự án càng lớn, code càng rối. Vậy làm sao để tổ chức code cho dễ đọc, dễ sửa? Câu trả lời là MVC.”<br><br>
+                    SFX: Paper shredder sound / Fast scrolling
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:31 – 00:50 | TỔNG QUAN MVC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Ba khối: Model – View – Controller xuất hiện đồng thời.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    MVC (Model – View – Controller)
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “MVC là một mô hình kiến trúc phần mềm. Nó chia code thành 3 phần rõ ràng với trách nhiệm riêng biệt.”<br><br>
+                    SFX: Three distinct "Pop" sounds
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:51 – 01:20 | MODEL – TRÁI TIM DỮ LIỆU</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Database icon hiện ra. Các đối tượng User, Product, Order xoay quanh.<br><br>
+                    <strong>Typography:</strong><br>
+                    MODEL: DATA & LOGIC
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Model chịu trách nhiệm về dữ liệu. Làm việc với database, xử lý logic nghiệp vụ. Ví dụ: User, Product, Order… Tất cả đều nằm trong Model.”<br><br>
+                    SFX: Data processing / Mechanical sounds
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:21 – 01:45 | VIEW – NHỮNG GÌ BẠN THẤY</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Website UI và Mobile UI hiện ra. Hiệu ứng làm mờ các phần code, chỉ để lộ giao diện.<br><br>
+                    <strong>Typography:</strong><br>
+                    VIEW: GIAO DIỆN
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “View là phần người dùng nhìn thấy. HTML, CSS, UI… đều nằm ở View. View không xử lý logic phức tạp, nó chỉ hiển thị dữ liệu.”<br><br>
+                    SFX: Camera shutter sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:46 – 02:15 | CONTROLLER – BỘ NÃO ĐIỀU KHIỂN</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Controller đứng giữa Model & View. Luồng mũi tên: User → Controller → Model → Controller → View.<br><br>
+                    <strong>Typography:</strong><br>
+                    CONTROLLER: ĐIỀU PHỐI
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Controller là người điều phối. Nó nhận request từ người dùng, gọi Model lấy dữ liệu, rồi gửi dữ liệu đó sang View để hiển thị.”<br><br>
+                    SFX: Traffic controller whistle / Whoosh
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:16 – 02:45 | LỢI ÍCH CỦA VIỆC CHIA TÁCH</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Sửa View (đổi màu) không ảnh hưởng Model. Sửa Model (đổi database) không đụng View.<br><br>
+                    <strong>Typography:</strong><br>
+                    SỬA GIAO DIỆN ≠ HỎNG DỮ LIỆU
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Nhờ chia rõ trách nhiệm, bạn sửa giao diện mà không ảnh hưởng dữ liệu, sửa logic mà không làm hỏng UI.”<br><br>
+                    SFX: Construction / Fixing sounds
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:46 – 03:05 | KẾT LUẬN – TƯ DUY TỔ CHỨC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Typography mạnh mẽ hiện theo beat nhạc.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    MVC = CHIA ĐỂ TRỊ<br>
+                    MODEL ≠ VIEW ≠ CONTROLLER<br>
+                    CODE ĐẸP – DỄ SỬA
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “MVC không phải framework, nó là tư duy tổ chức code. Hiểu MVC, bạn sẽ học các framework như Laravel, Spring hay ASP.NET dễ hơn rất nhiều.”<br><br>
+                    Nhạc nền cao trào
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- VIDEO CARD 13333333333333333333333333-->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?14" class="thumb" alt="Git Version Control Concept">
+    <div class="info">
+        <div class="title">Video 13 – Git là gì? Bảo hiểm cho mã nguồn của bạn</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7600390423894314261?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Git Version Control</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:30 | HOOK – KHI CTRL + Z LÀ KHÔNG ĐỦ</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Màn hình code lỗi rực đỏ → project toang. Hiệu ứng nhấn Ctrl + Z liên tục nhưng hiện dấu ❌.<br>
+                    Sau đó, một timeline xuất hiện với các mốc thời gian an toàn.<br><br>
+                    <strong>Typography:</strong><br>
+                    CTRL + Z KHÔNG CỨU ĐƯỢC DỰ ÁN…
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Ctrl + Z chỉ cứu được vài giây trước thôi. Nhưng nếu project lỗi từ hôm qua thì sao? Đó là lý do developer nào cũng dùng Git.”<br><br>
+                    SFX: Error buzz / Rewind sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:31 – 01:05 | VERSION CONTROL LÀ GÌ?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Các phiên bản code xuất hiện dạng sơ đồ: v1 → v2 → v3.<br>
+                    Hiệu ứng quay ngược timeline về một phiên bản cũ.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    VERSION CONTROL (Lưu lại lịch sử)
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Git là một hệ thống quản lý phiên bản. Nó lưu lại lịch sử thay đổi của code. Bạn có thể quay lại bất kỳ thời điểm nào trong quá khứ, giống như tính năng save game vậy.”<br><br>
+                    SFX: Clock ticking / Game save sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:06 – 01:35 | COMMIT – GHI LẠI THAY ĐỔI</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon nút Save biến thành chữ Commit. Các nhãn ghi chú bay vào: “Fix login bug”, “Add payment feature”.<br><br>
+                    <strong>Typography:</strong><br>
+                    COMMIT = ĐIỂM LƯU
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Commit giống như một điểm lưu. Mỗi commit ghi lại một thay đổi có ý nghĩa. Commit luôn đi kèm message để sau này bạn biết mình đã thực sự làm gì.”<br><br>
+                    SFX: Camera shutter / Typing sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:36 – 02:05 | BRANCH – TÁCH NHÁNH SONG SONG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Timeline chính tách ra các nhánh phụ. Nhiều dev cùng làm trên các nhánh khác nhau rồi gộp lại (Merge).<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    BRANCH (Nhánh riêng biệt)
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Branch là nhánh code riêng. Bạn có thể thử tính năng mới mà không ảnh hưởng code chính. Mọi người trong team làm trên các nhánh khác nhau, xong rồi mới gộp lại.”<br><br>
+                    SFX: Tree growing / Branch snapping sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:06 – 02:35 | GIT WORKFLOW TRONG TEAM</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Vòng lặp animation: Dev → Commit → Push → Merge. Các đoạn code gộp vào nhau mượt mà.<br><br>
+                    <strong>Typography:</strong><br>
+                    LÀM VIỆC SONG SONG - KHÔNG ĐÈ CODE
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Git giúp team làm việc song song, không đè code của nhau và luôn có lịch sử rõ ràng cho từng dòng code được viết ra.”<br><br>
+                    SFX: Gear turning / Whoosh
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:36 – 03:00 | KẾT LUẬN – TƯ DUY CHUYÊN NGHIỆP</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Typography mạnh mẽ xuất hiện theo beat nhạc cuối video.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    GIT ≠ CHỈ LÀ LỆNH<br>
+                    GIT = BẢO HIỂM CHO CODE
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Git không chỉ là công cụ, nó là thói quen của developer chuyên nghiệp. Hiểu Git là bạn đã nắm trong tay bảo hiểm cho toàn bộ dự án của mình.”<br><br>
+                    Nhạc nền cao trào
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- VIDEO CARD 14114444444444444444444444-->
+       <div class="video-card">
+    <img src="https://picsum.photos/400/225?15" class="thumb" alt="Data Center and Servers">
+    <div class="info">
+        <div class="title">Video 14 – Website sống ở đâu? Khám phá về Server</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7600761049113169173?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Server Fundamentals</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:08 | HOOK – CÂU HỎI NHẬP ĐỀ</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Màn hình đen. Icon 🌐 website xuất hiện → zoom nhẹ.<br>
+                    Câu hỏi bật ra từng chữ với hiệu ứng pop.<br><br>
+                    <strong>Typography:</strong><br>
+                    WEBSITE SỐNG Ở ĐÂU?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn có bao giờ tự hỏi… website mà mình truy cập mỗi ngày, rốt cuộc nó sống ở đâu không?”<br><br>
+                    SFX: Pop nhẹ + nhạc nền bắt đầu
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:09 – 00:30 | SERVER LÀ GÌ?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Máy tính cá nhân (Laptop) bên trái vs. Một máy to, có đèn nhấp nháy (Server) bên phải.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    SERVER LÀ GÌ?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Server thực chất cũng là một cái máy tính. Nhưng nó không phải máy cá nhân như laptop của bạn.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:31 – 00:55 | SERVER VS MÁY CÁ NHÂN</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chia màn hình làm 2 cột: Laptop ở nhà vs. Server trong phòng máy.<br><br>
+                    <strong>Typography (Table):</strong><br>
+                    - Máy cá nhân: Tắt mở tuỳ lúc / 1 người dùng<br>
+                    - Server: Luôn bật / Nhiều người truy cập
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Máy cá nhân thì bạn tắt mở tuỳ thích. Còn server thì phải luôn bật để phục vụ người khác.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:56 – 01:25 | ẨN DỤ NHÀ RIÊNG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Căn nhà riêng. Một người đứng trước cửa. Khi nhiều người tới → bị quá tải.<br><br>
+                    <strong>Typography:</strong><br>
+                    MÁY CÁ NHÂN = NHÀ RIÊNG
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn có thể tưởng tượng thế này: máy cá nhân giống như một căn nhà riêng. Chỉ ở được vài người, và chủ nhà đi đâu là… khoá cửa.”<br><br>
+                    SFX: Cửa đóng cạch
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:26 – 01:55 | TRUNG TÂM DỮ LIỆU (DATA CENTER)</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chuyển sang toà nhà lớn. Nhiều server xếp hàng, đèn nhấp nháy, dây mạng.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    DATA CENTER
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Còn server thì giống như một toà nhà trung tâm dữ liệu. Lúc nào cũng có điện, mạng, và bảo vệ canh gác 24/7.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:56 – 02:20 | 24/7 & KHẢ NĂNG TRUY CẬP</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Đồng hồ chạy liên tục. Nhiều icon người dùng cùng truy cập website cùng lúc.<br><br>
+                    <strong>Typography:</strong><br>
+                    ONLINE 24/7
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Website phải online 24 trên 7. Hàng ngàn, thậm chí hàng triệu người cùng truy cập một lúc.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:21 – 02:45 | TẦM QUAN TRỌNG CỦA SERVER</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Người dùng → mũi tên → Server → phản hồi lại dữ liệu.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    KHÔNG CÓ SERVER - KHÔNG CÓ WEB
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Không có server, thì không có nơi lưu code, lưu dữ liệu, và không có ai trả lời khi người dùng gửi yêu cầu.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:46 – 03:05 | TỔNG KẾT KIẾN THỨC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Quay lại lưới 3D. Chữ to, đậm, căn giữa xuất hiện mạnh.<br><br>
+                    <strong>Typography:</strong><br>
+                    SERVER: NƠI WEBSITE SỐNG
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Tóm lại, server chính là nơi website sinh sống. Máy cá nhân không đủ ổn định, nên web bắt buộc phải chạy trên server.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">03:06 – 03:15 | KẾT THÚC – CTA</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Icon comment bay lên. Hiệu ứng vui nhẹ.<br><br>
+                    <strong>Typography:</strong><br>
+                    Bạn đã từng deploy web chưa?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn đã từng deploy web lên server chưa? Comment cho mình biết nha!”<br><br>
+                    SFX: Ting ✨
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- VIDEO CARD 1555555555555555555555555-->
+       <div class="video-card">
+    <img src="https://picsum.photos/400/225?16" class="thumb" alt="Cloud Computing Concept">
+    <div class="info">
+        <div class="title">Video 15 – Cloud Computing: Tại sao không cần mua server?</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7601129082268503317?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Cloud Computing Fundamentals</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:08 | HOOK – CÂU HỎI VỀ CHI PHÍ</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Website icon hiện lên. Server vật lý xuất hiện → gạch chéo ❌.<br>
+                    Câu hỏi bật ra với hiệu ứng rung nhẹ.<br><br>
+                    <strong>Typography:</strong><br>
+                    KHÔNG MUA SERVER THÌ CHẠY WEB KIỂU GÌ?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Không lẽ làm web là phải mua server riêng hết sao?”<br><br>
+                    SFX: Pop + nhạc vào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:09 – 00:25 | NỖI ĐAU SERVER VẬT LÝ</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Server vật lý: to, đắt tiền. Xuất hiện tag giá $$$ tăng dần.<br><br>
+                    <strong>Typography:</strong><br>
+                    SERVER RIÊNG = TỐN KÉM
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Mua server riêng thì rất tốn tiền, chưa kể điện, mạng, bảo trì, và kỹ thuật vận hành.”<br><br>
+                    SFX: Cash register "Cha-ching!"
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:26 – 00:45 | SỰ RA ĐỜI CỦA ĐÁM MÂY</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Server vật lý tan rã thành các khối pixel nhỏ. Gom lại thành một đám mây ☁️ xanh mượt.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    CLOUD COMPUTING
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Và đó là lý do Cloud Computing ra đời.”<br><br>
+                    SFX: Magic whoosh
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:46 – 01:10 | THUÊ TÀI NGUYÊN LINH HOẠT</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Người dùng → chọn CPU, RAM, Storage bằng các icon thanh trượt.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    THUÊ TÀI NGUYÊN (PAY-AS-YOU-GO)
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Cloud nghĩa là bạn không mua server. Bạn chỉ thuê tài nguyên như CPU, RAM, ổ cứng… dùng bao nhiêu, trả tiền bấy nhiêu.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:11 – 01:40 | ẨN DỤ DỄ HIỂU</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Chia đôi màn hình: Trái (Xây nhà: gạch đá, bụi bặm) vs Phải (Thuê nhà: xách vali vào ở).<br><br>
+                    <strong>Typography:</strong><br>
+                    TỰ XÂY NHÀ vs THUÊ NHÀ
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Cloud giống như thuê nhà vậy. Bạn chỉ việc vào ở, còn chủ nhà lo điện, nước, sửa chữa.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:41 – 02:05 | TẠI SAO CHỌN CLOUD?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Các icon: 💸 (Tiết kiệm), 📈 (Scale nhanh), ⚡ (Online 24/7) hiện ra theo nhịp.<br><br>
+                    [Image showing the benefits of cloud computing: scalability, cost-efficiency, and reliability]
+                    <strong>Typography:</strong><br>
+                    - Không cần mua server<br>
+                    - Scale nhanh<br>
+                    - Luôn online
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Cloud giúp bạn triển khai web nhanh, tăng giảm tài nguyên linh hoạt, và luôn online 24 trên 7.”<br><br>
+                    SFX: Success ding (3 lần)
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:06 – 02:30 | CÁC "ÔNG LỚN" TRONG NGÀNH</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Logo AWS, GCP, Azure xuất hiện xoay tròn quanh đám mây trung tâm.<br><br>
+                    <strong>Typography:</strong><br>
+                    AWS | GCP | AZURE
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Những nền tảng cloud phổ biến hiện nay là Amazon Web Services, Google Cloud Platform, và Microsoft Azure.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:31 – 02:50 | ĐỐI TƯỢNG SỬ DỤNG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Startup icon → nhiều người dùng ập đến → server tự phình to (scale up).<br><br>
+                    <strong>Typography:</strong><br>
+                    STARTUP – WEB APP – MOBILE APP
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Hầu hết startup, website, và mobile app hiện đại đều chạy trên cloud.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:51 – 03:05 | TỔNG KẾT KIẾN THỨC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Đám mây lớn bao trọn website bên trong. Chữ căn giữa, in đậm.<br><br>
+                    <strong>Typography:</strong><br>
+                    CLOUD: SERVER ĐI THUÊ
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Tóm lại, cloud chính là server đi thuê. Bạn không cần mua, nhưng vẫn chạy được web như bình thường.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">03:06 – 03:15 | KẾT THÚC – CTA</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Comment icon bay lên. Logo cloud mờ phía sau.<br><br>
+                    <strong>Typography:</strong><br>
+                    Bạn biết cloud nào?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn đã từng dùng AWS hay Google Cloud chưa? Comment cho mình biết nha!”<br><br>
+                    SFX: Ting ✨
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- VIDEO CARD 16666666666666666666666666666666-->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?17" class="thumb" alt="DevOps Lifecycle Concept">
+    <div class="info">
+        <div class="title">Video 16 – DevOps là gì? Đưa code ra "đời thật"</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7601499412929629461?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>DevOps Fundamentals</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:08 | HOOK – CÂU HỎI VỀ QUY TRÌNH</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Dev ngồi code → bấm “Run”. Dòng chữ hiện ra bật mạnh.<br><br>
+                    <strong>Typography:</strong><br>
+                    CODE XONG LÀ XONG CHƯA?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Code xong là xong chưa? Hay còn chuyện gì phía sau nữa?”<br><br>
+                    SFX: Pop + nhạc vào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:09 – 00:25 | NỖI ĐAU LOCAL VS PRODUCTION</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Dev ném code sang server. Server báo lỗi ❌ rực đỏ màn hình.<br><br>
+                    <strong>Typography:</strong><br>
+                    CODE CHẠY LOCAL ≠ CHẠY THẬT
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Code chạy trên máy bạn, chưa chắc đã chạy được ngoài thực tế.”<br><br>
+                    SFX: Error buzz
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:26 – 00:45 | NHỊP CẦU DEVOPS</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Hai khối tách biệt: DEV | SERVER. Một cây cầu công nghệ xuất hiện nối giữa.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    DEVOPS
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “DevOps ra đời để giải quyết khoảng trống đó.”<br><br>
+                    SFX: Bridge building sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:46 – 01:10 | ĐỊNH NGHĨA VÀ CÁCH VẬN HÀNH</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Luồng mũi tên 2 chiều chạy liên tục giữa Dev và Server.<br><br>
+                    <strong>Typography:</strong><br>
+                    CẦU NỐI DEV & SERVER
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “DevOps không phải là một công nghệ, mà là cách làm việc giúp dev và hệ thống vận hành phối hợp với nhau.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:11 – 01:35 | QUY TRÌNH DEPLOY</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Code → Git → Server. Progress bar chạy nhanh từ trái sang phải.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    DEPLOY
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Đầu tiên là deploy. Tức là đưa code từ máy dev lên server để người dùng có thể truy cập.”<br><br>
+                    SFX: Loading nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:36 – 02:00 | GIÁM SÁT HỆ THỐNG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Dashboard hiện biểu đồ CPU, RAM. Một cảnh báo đỏ bất ngờ bật lên.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    MONITOR
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Sau khi chạy, hệ thống cần được theo dõi. Server có bị quá tải không? Có lỗi nào đang xảy ra không?”<br><br>
+                    SFX: Alarm beep nhẹ
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:01 – 02:25 | MỞ RỘNG LINH HOẠT</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Một icon server nhân bản thành nhiều server. Người dùng tăng vọt.<br><br>
+                    <strong>Typography:</strong><br>
+                    SCALE
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Khi người dùng tăng, DevOps giúp hệ thống mở rộng mà không bị sập.”<br><br>
+                    SFX: Pop pop pop
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:26 – 02:45 | TẠI SAO CẦN DEVOPS?</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Dev và Ops bắt tay nhau. Cây cầu sáng rực lên.<br><br>
+                    <strong>Typography:</strong><br>
+                    TỰ ĐỘNG – ỔN ĐỊNH – NHANH
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “DevOps giúp việc deploy nhanh hơn, hệ thống ổn định hơn, và giảm lỗi cho cả team.”<br><br>
+                    SFX: Confirm ding
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:46 – 03:05 | TỔNG KẾT KIẾN THỨC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Cầu DevOps hoàn chỉnh. Dòng người qua lại tấp nập trên website.<br><br>
+                    <strong>Typography:</strong><br>
+                    DEVOPS: CODE CHẠY NGOÀI ĐỜI THẬT
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Tóm lại, DevOps đảm bảo rằng code của bạn không chỉ chạy được, mà còn chạy tốt ngoài đời thật.”<br><br>
+                    Nhạc nền cao trào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">03:06 – 03:15 | KẾT THÚC – CTA</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Comment icon bay lên. Logo Docker / CI-CD mờ phía sau.<br><br>
+                    <strong>Typography:</strong><br>
+                    DEVOPS CÓ KHÓ KHÔNG?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn có muốn học DevOps không? Comment cho mình biết nha!”<br><br>
+                    SFX: Ting ✨
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- VIDEO CARD 17777777777777777777777-->
+       <div class="video-card">
+    <img src="https://picsum.photos/400/225?18" class="thumb" alt="Frontend Backend Fullstack Comparison">
+    <div class="info">
+        <div class="title">Video 17 – Nên học mảng nào: Frontend, Backend hay Fullstack?</div>
+<a href="https://www.tiktok.com/@namthanh0865/video/7601869334335507732?is_from_webapp=1&sender_device=pc&web_id=7599594289023403527" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Định hướng Career Path trong IT</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:08 | HOOK – CÂU HỎI ĐỊNH HƯỚNG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Ba nhân vật mờ: Frontend – Backend – Fullstack. Câu hỏi bật ra từng chữ mạnh mẽ.<br><br>
+                    <strong>Typography:</strong><br>
+                    NÊN HỌC MẢNG NÀO TRONG IT?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Frontend, Backend, Fullstack… Nghe quen mà vẫn khó chọn đúng không?”<br><br>
+                    SFX: Pop + nhạc vào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:09 – 00:25 | ẨN DỤ VỀ CĂN NHÀ</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Một căn nhà xuất hiện dạng wireframe, chia làm 3 phần rõ rệt.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    PHẦN MỀM LÀ MỘT CĂN NHÀ
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Một phần mềm, có thể hiểu giống như một căn nhà.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:26 – 00:55 | FRONTEND – MẶT TIỀN CỦA WEB</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Zoom vào mặt tiền nhà: cửa sổ, màu sắc, nút bấm. Các nút bấm sáng lên khi tương tác.<br><br>
+                    <strong>Typography:</strong><br>
+                    FRONTEND: GIAO DIỆN
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Frontend là phần bạn nhìn thấy và tương tác. Nút bấm, form, màu sắc, animation… Tất cả đều là frontend.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:56 – 01:20 | CÔNG CỤ CỦA FRONTEND</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Người dùng click → hiệu ứng phản hồi mượt mà. Logo HTML, CSS, JS hiện ra.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    HTML | CSS | JAVASCRIPT
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Frontend developer tập trung vào trải nghiệm người dùng và giao diện trên trình duyệt.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:21 – 01:50 | BACKEND – HỆ THỐNG NGẦM</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Zoom xuống phần móng nhà: ống nước, dây điện ẩn bên trong đang hoạt động.<br><br>
+                    <strong>Typography:</strong><br>
+                    BACKEND: LOGIC & DATA
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Backend là phần phía sau. Người dùng không thấy, nhưng nó xử lý logic và dữ liệu.”<br><br>
+                    SFX: Mechanical humming sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:51 – 02:10 | CÔNG CỤ CỦA BACKEND</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Luồng dữ liệu: Request → Server → Database. Các icon API và Lock hiện ra.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    API | DATABASE | AUTH
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Backend lo xử lý request, làm việc với database, và đảm bảo dữ liệu an toàn.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:11 – 02:35 | FULLSTACK – NGƯỜI TOÀN NĂNG</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Căn nhà hoàn chỉnh. Ánh sáng bật lên toàn bộ từ móng đến mái.<br><br>
+                    <strong>Typography:</strong><br>
+                    FULLSTACK: CẢ CĂN NHÀ
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Fullstack là người hiểu cả frontend lẫn backend. Có thể tự mình xây dựng một sản phẩm hoàn chỉnh.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:36 – 02:55 | CHỌN MẢNG PHÙ HỢP</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Ba cột so sánh đơn giản hiện ra cân bằng.<br><br>
+                    <strong>Typography:</strong><br>
+                    FRONTEND: UI/UX<br>
+                    BACKEND: LOGIC<br>
+                    FULLSTACK: TỔNG HỢP
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Không có mảng nào tốt hơn mảng nào. Quan trọng là bạn hợp với phần nào hơn mà thôi.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:56 – 03:10 | TỔNG KẾT</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Ba vai trò đứng cạnh nhau. Căn nhà hoàn thiện rực rỡ phía sau.<br><br>
+                    <strong>Typography (Bold):</strong><br>
+                    CHỌN ĐÚNG - CHỌN NHIỀU
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Hãy bắt đầu từ một mảng bạn thích nhất, sau đó mở rộng dần ra các mảng còn lại.”<br><br>
+                    Nhạc nền cao trào
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">03:11 – 03:20 | KẾT THÚC – CTA</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Comment icon bay lên. Hiệu ứng vui vẻ.<br><br>
+                    <strong>Typography:</strong><br>
+                    BẠN HỢP MẢNG NÀO?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn đang theo frontend, backend hay fullstack? Comment cho mình biết nha!”<br><br>
+                    SFX: Ting ✨
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- VIDEO CARD 18888888888888888888888-->
+        <div class="video-card">
+    <img src="https://picsum.photos/400/225?19" class="thumb" alt="Developer Career Levels Concept">
+    <div class="info">
+        <div class="title">Video 18 – Junior, Mid, Senior: Khác nhau ở đâu?</div>
+<a href="" 
+               target="_blank"
+               class="title text-white font-bold text-lg leading-snug group-hover:text-red-500 transition-colors duration-300">
+                Nhấn để mở video
+            </a>
+    </div>
+    <div class="btn-view" onclick="openScript(this)">XEM KỊCH BẢN</div>
+
+    <div class="script-overlay">
+        <button class="btn-close" onclick="closeScript(this)">Đóng</button>
+        <h3>Developer Levels (The Game Analogy)</h3>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:00 – 00:08 | HOOK – HIỂU LẦM VỀ SENIOR</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Nhân vật game cầm kiếm. Thanh EXP tăng vọt.<br>
+                    Câu hỏi bật ra với hiệu ứng "Level Up" rực rỡ.<br><br>
+                    <strong>Typography:</strong><br>
+                    SENIOR CHỈ CODE NHANH HƠN THÔI SAO?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Senior có phải chỉ là người code nhanh hơn junior không?”<br><br>
+                    SFX: Game Level Up sound
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:09 – 00:25 | NGHỀ IT LÀ CHƠI GAME</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Màn hình game hiện 3 nhân vật: Level 1 – Level 50 – Level 99.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    DEV = CHƠI GAME LÊN LEVEL
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Thật ra, nghề lập trình giống như chơi game. Khác level, khác vai trò.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:26 – 00:55 | JUNIOR – NGƯỜI THỰC THI</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Nhân vật Level 1. Một NPC hiện ra giao nhiệm vụ (Task).<br><br>
+                    <strong>Typography:</strong><br>
+                    JUNIOR: LÀM THEO TASK
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Junior là người mới vào nghề. Thường được giao task rõ ràng và làm theo hướng dẫn.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">00:56 – 01:15 | MỤC TIÊU CỦA JUNIOR</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Checklist hiện từng dòng tích xanh ✔. Code hiện lên gọn gàng.<br><br>
+                    <strong>Typography:</strong><br>
+                    - Code theo spec<br>
+                    - Fix bug đơn giản<br>
+                    - Học quy trình
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Mục tiêu của junior không phải code cho nhanh, mà là code đúng và hiểu việc mình làm.”<br><br>
+                    SFX: Success ding
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:16 – 01:45 | MID – NGƯỜI GIẢI QUYẾT</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Nhân vật Level 50. Bản đồ (Map) rộng hơn. Nhân vật tự chọn hướng đi trên radar.<br><br>
+                    <strong>Typography:</strong><br>
+                    MID: TỰ GIẢI QUYẾT VẤN ĐỀ
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Mid-level là người đã quen việc. Khi gặp vấn đề, họ có thể tự tìm cách giải quyết.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">01:46 – 02:05 | TRÁCH NHIỆM CỦA MID</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Bug xuất hiện rác trên màn hình → nhân vật tự tay xử lý hết sạch.<br><br>
+                    <strong>Typography:</strong><br>
+                    TỰ DEBUG - ĐỀ XUẤT GIẢI PHÁP
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Mid không cần cầm tay chỉ việc, và bắt đầu đóng góp ý kiến cho team.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:06 – 02:35 | SENIOR – NGƯỜI CHIẾN LƯỢC</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Nhân vật Level 99. Zoom out nhìn toàn bộ bản đồ chiến thuật.<br><br>
+                    
+                    <strong>Typography:</strong><br>
+                    SENIOR: THIẾT KẾ & DẪN DẮT
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Senior không chỉ code. Họ thiết kế hệ thống và dẫn dắt cả team đi đúng hướng.”<br><br>
+                    SFX: Epic orchestral background music
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:36 – 02:55 | TẦM NHÌN SENIOR</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Sơ đồ kiến trúc hiện ra. Senior hướng dẫn cho các nhân vật nhỏ hơn.<br><br>
+                    <strong>Typography:</strong><br>
+                    SYSTEM DESIGN - MENTORING
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Senior giúp team tránh sai lầm lớn, chứ không chỉ làm nhanh hơn.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">02:56 – 03:10 | KẾT LUẬN – VAI TRÒ RIÊNG BIỆT</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    Ba nhân vật đứng cùng nhau. Thanh level hoàn chỉnh rực sáng.<br><br>
+                    <strong>Typography:</strong><br>
+                    LEVEL KHÁC NHAU - VAI TRÒ KHÁC NHAU
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Junior, Mid hay Senior không hơn kém nhau, chỉ là đang ở level khác nhau.”
+                </div>
+            </div>
+        </div>
+
+        <div class="script-segment">
+            <span class="time-stamp">03:11 – 03:20 | KẾT THÚC – CTA</span>
+            <div class="script-grid">
+                <div class="visual">
+                    <span class="label">👁 Visual & Motion</span>
+                    EXP bar nhấp nháy liên tục. Comment icon bay lên.<br><br>
+                    <strong>Typography:</strong><br>
+                    BẠN ĐANG Ở LEVEL NÀO?
+                </div>
+                <div class="audio">
+                    <span class="label">🔊 Audio</span>
+                    VO: “Bạn đang ở level nào trong nghề IT? Comment cho mình biết nha!”<br><br>
+                    SFX: Ting ✨
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+</div>
+
+<script>
+    function openScript(btn) {
+        document.querySelectorAll('.script-overlay').forEach(o => o.style.display = 'none');
+        btn.nextElementSibling.style.display = 'block';
+    }
+
+    function closeScript(btn) {
+        btn.parentElement.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
